@@ -36,18 +36,18 @@ header {
 .image-card {
     position: relative;
     overflow: hidden;
-    flex: 0 0 calc(25% - 20px); /* 4 cards in a row with 20px margin between them for larger screens */
+    flex: 1 1 calc(25% - 20px); /* Adjust the card size based on available space */
+    max-width: calc(25% - 20px); /* Set maximum width for each card */
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    max-width: 100%;
 }
 
 .image-card img {
     max-width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .image-card:hover {
@@ -169,6 +169,7 @@ footer {
 /* Media query for smaller screens (max-width: 768px) */
 @media (max-width: 768px) {
     .image-card {
-        flex: 0 0 calc(50% - 20px); /* 2 cards in a row with 20px margin between them for smaller screens */
+        flex: 1 1 calc(50% - 20px); /* 2 cards in a row for smaller screens */
+        max-width: calc(50% - 20px); /* Adjust maximum width for smaller screens */
     }
 }
